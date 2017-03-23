@@ -1,18 +1,18 @@
 package api;
 
 
-/** 定义api返回格式
+/** define the return data struct of the api request
  * Created by shavene on 3/21/2017.
  */
 public class ResponseEntity {
 
     /**
      * errorCode description
-     * 0: 成功
-     * 40001: 未找到数据
-     * 40002: 请求参数为空
-     * 40003: 查询异常中断
-     * 40004: 保存异常中断
+     * 0: success
+     * 40001: Data Not Found
+     * 40002: Request Parameter is null
+     * 40003: Query Exception
+     * 40004: Save Exception
      */
     private int errorCode;
     private String accessToken;

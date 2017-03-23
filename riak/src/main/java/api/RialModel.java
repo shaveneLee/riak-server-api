@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
-/** 对riak db进行CRUD操作
+/** CRUD of riak-kv db
  * Created by shavene on 3/21/2017.
  */
 public class RialModel {
@@ -49,7 +49,7 @@ public class RialModel {
             response = client.execute(fv);
             if (response.isNotFound()) {
                 result.setErrorCode(40001);
-                result.setMessage("未找到数据");
+                result.setMessage("Data Not Found");
                 return result;
             }
             String value = response.getValue(RiakObject.class).getValue().toString();
@@ -88,7 +88,7 @@ public class RialModel {
         ResponseEntity result = new ResponseEntity();
         if (null == request) {
             result.setErrorCode(40002);
-            result.setMessage("请求参数为空");
+            result.setMessage("request parameter can not be null.");
             return result;
         }
 
@@ -110,7 +110,7 @@ public class RialModel {
 
         if ((null == obj || obj.isEmpty()) && (null == string || string.isEmpty())) {
             result.setErrorCode(40002);
-            result.setMessage("请求参数为空");
+            result.setMessage("request parameter can not be null.");
             return result;
         }
         StoreValue sv = null;
@@ -124,7 +124,7 @@ public class RialModel {
             String keyString = svResponse.getLocation().getKeyAsString();
             if (keyString.isEmpty()) {
                 result.setErrorCode(40001);
-                result.setMessage("保存数据失败");
+                result.setMessage("The result of keys is empty");
                 return result;
             }
             result.setResult(keyString);
@@ -228,7 +228,7 @@ public class RialModel {
                 response = client.execute(fv);
                 if (response.isNotFound()) {
                     result.setErrorCode(40001);
-                    result.setMessage("未找到数据");
+                    result.setMessage("Data Not Found");
                     return result;
                 }
                 String value = response.getValue(RiakObject.class).getValue().toString();

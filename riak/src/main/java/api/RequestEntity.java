@@ -2,7 +2,7 @@ package api;
 
 import java.util.HashMap;
 
-/** 定义api请求参数格式
+/** define the request data struct
  * Created by shavene on 3/21/2017.
  */
 public class RequestEntity {

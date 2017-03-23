@@ -13,10 +13,10 @@ public class RiakController {
 
     /**
      * get value of the specify key
-     * @param type
-     * @param buckets
-     * @param keys
-     * @return
+     * @param type  bucket type
+     * @param buckets bucket name
+     * @param keys   unique key within bucket
+     * @return  ResponseEntity
      */
     @RequestMapping(value="/fetchValue", method= RequestMethod.GET)
     public ResponseEntity fetchValue(@RequestParam(value="type", defaultValue="default") String type,
