@@ -31,7 +31,7 @@ public class RialModel {
         //save query request parameter for return
         RequestEntity request = new RequestEntity();
         request.setType(type);
-        request.setBuckets(type);
+        request.setBuckets(buckets);
         request.setKeys(keys);
         result.setQuery(request);
 
@@ -154,7 +154,7 @@ public class RialModel {
         //save query request parameter for return
         RequestEntity request = new RequestEntity();
         request.setType(type);
-        request.setBuckets(type);
+        request.setBuckets(buckets);
         result.setQuery(request);
 
         //init connect client
@@ -197,7 +197,7 @@ public class RialModel {
         //save query request parameter for return
         RequestEntity request = new RequestEntity();
         request.setType(type);
-        request.setBuckets(type);
+        request.setBuckets(buckets);
         result.setQuery(request);
 
         //init connect client
